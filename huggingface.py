@@ -152,15 +152,15 @@ def ask_soma_plus(user_text: str):
     ]
 
     completion = client.chat.completions.create(
-        model="openai/gpt-oss-20b:groq",   # keep the model
+        model="openai/gpt-oss-20b:together",   # keep the model
         messages=messages,
-        temperature=0.7,
-        max_tokens=800,
+        temperature=0.2,
+        max_tokens=400,
         stop = ["<END>"]
     )
 
     raw = completion.choices[0].message.content
-    return raw #strip_at_end_token(raw)
+    return strip_at_end_token(raw)
 
 
 def populate_params(
@@ -192,6 +192,6 @@ def populate_params(
 
 # Example call
 if __name__ == "__main__":
-    out = ask_soma_plus("I feel pain in my leg, mostly after playing soccer.")
+    out = ask_soma_plus("I feel pain in my leg, mostly after playing soccer. pain sever = 2, started 3 days ago and sharp pain")
     print(out)
 
