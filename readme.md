@@ -15,7 +15,8 @@ It does **not** provide medical advice. Always seek a healthcare professional if
    - A black window will open — leave it running.
 
 2. **Open the App**
-   - Run **`SomaPlus.exe`** (Windows) or **`SomaPlus.app`** (Mac).
+   - Go to UnityProject > Soma+ > Builds
+   - Run **.exe`** (Windows) or **.html`** (Web).
    - The Soma+ demo will open full screen.
 
 3. **Use the App**
