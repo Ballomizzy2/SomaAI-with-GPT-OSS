@@ -155,11 +155,12 @@ def ask_soma_plus(user_text: str):
         model="openai/gpt-oss-20b:groq",   # keep the model
         messages=messages,
         temperature=0.7,
-        max_tokens=350,
+        max_tokens=800,
+        stop = ["<END>"]
     )
 
     raw = completion.choices[0].message.content
-    return strip_at_end_token(raw)
+    return raw #strip_at_end_token(raw)
 
 
 def populate_params(

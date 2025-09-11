@@ -24,7 +24,7 @@ public class AppContoller : MonoBehaviour
     [SerializeField] private TMP_InputField contextInput, qualityInput, daysInput;
     [SerializeField] private Slider severitySlider;
     // UI Output
-    [SerializeField] private TMP_InputField AIoutput;
+    [SerializeField] private TextMeshProUGUI AIoutput;
     
     
     
@@ -88,7 +88,7 @@ public class AppContoller : MonoBehaviour
             //var jsonOutput = JsonUtility.FromJson<AIResponse>(webReq.downloadHandler.text);
 
             Debug.Log(" says: " + webReq.downloadHandler.text);
-            AIoutput.text = webReq.downloadHandler.text;
+            AIoutput.text = "\n" + webReq.downloadHandler.text;
 
             if (webReq.result == UnityWebRequest.Result.Success)
             {
