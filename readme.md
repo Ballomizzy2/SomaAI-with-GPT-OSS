@@ -16,7 +16,7 @@ It does **not** provide medical advice. Always seek a healthcare professional if
 
 2. **Open the App**
    - Go to UnityProject > Soma+ > Builds
-   - Run **.exe`** (Windows) or **.html`** (Web).
+   - Run **`.exe`** (Windows) or **`.html`** (Web).
    - The Soma+ demo will open full screen.
 
 3. **Use the App**
