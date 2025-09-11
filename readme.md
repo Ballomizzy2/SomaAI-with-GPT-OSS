@@ -28,12 +28,11 @@ It does **not** provide medical advice. Always seek a healthcare professional if
      - A short acknowledgment
      - A simple exercise (1–4 steps)
      - A disclaimer
-   - Log more entries anytime. Progress (XP, streak, badges) updates automatically.
+   - Log more entries anytime. Make sure the server is running!
 
 4. **Tips**
    - Stay online (internet required).  
    - If you see “trouble connecting,” restart the app after ensuring the server is running.  
-   - Press **R** to reset the camera view.
 
 ---
 
