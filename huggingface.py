@@ -18,7 +18,7 @@ user_trauma=False
 # 0) Your existing client, pointing at the HF router that speaks "OpenAI-compatible" API
 client = OpenAI(
     base_url="https://router.huggingface.co/v1",
-    api_key=os.getenv("OPENAI_API_KEY"),
+    api_key=os.getenv("HF_API_KEY"),
 )
 
 # 1) SYSTEM PERSONA: who the model is + meta-rules

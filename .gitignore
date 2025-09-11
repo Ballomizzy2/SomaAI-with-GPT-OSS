@@ -41,3 +41,7 @@ Thumbs.db
 *.stackdump
 *.apk
 *.aab
+
+.env
+*.key
+*.pem
