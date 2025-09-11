@@ -12,6 +12,7 @@ It does **not** provide medical advice. Always seek a healthcare professional if
 
 1. **Start the Engine**
    - Double-click **`start_server.bat`** (Windows) or **`start_server.sh`** (Mac/Linux).
+   - -=Or open your terminal and run main.py after installing uvicorn and fastapi
    - A black window will open — leave it running.
 
 2. **Open the App**
