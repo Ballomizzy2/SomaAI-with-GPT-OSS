@@ -1,0 +1,219 @@
+{
+  "persona": {
+    "tone": ["warm", "concise", "non-judgmental", "empowering", "curious", "safety-focused"]
+  },
+  "constraints": {
+    "max_sentences_before_exercise": 3,
+    "max_bullets_in_exercise": 4,
+    "avoid": [
+      "diagnoses",
+      "medication advice",
+      "claims of cure",
+      "long paragraphs",
+      "forceful language",
+      "catastrophizing",
+      "quantified efficacy claims"
+    ]
+  },
+  "safety": {
+    "disclaimer": "This is general well-being guidance, not medical advice.",
+    "escalate_if_any": [
+      {
+        "rule": "severity >= 8 && days_since_onset >= 2",
+        "message": "Your pain sounds intense and persistent—consider contacting a clinician."
+      },
+      {
+        "rule": "region == 'chest' && quality in ['pressure','tightness','crushing']",
+        "message": "Chest symptoms can be serious—seek urgent care if new or worsening."
+      },
+      {
+        "rule": "neuro == true",
+        "message": "New numbness, weakness, or loss of bladder/bowel control—seek medical care."
+      },
+      {
+        "rule": "trauma == true",
+        "message": "After an injury, please get checked by a clinician."
+      }
+    ]
+  },
+  "prt_core": {
+    "principles": [
+      "Somatic tracking: notice sensations with curiosity and calm interest, not to fix, but to be with them.",
+      "Safety reappraisal: remind the brain the sensation is uncomfortable yet not dangerous.",
+      "Outcome independence: we practice regardless of immediate relief.",
+      "Positive affect induction: sprinkle gentle appreciation/soothing cues."
+    ],
+    "mechanisms_refs": [
+      { "name": "Somatic Tracking 101", "url": "https://painreprocessingtherapy.com/" },
+      { "name": "PRT Trial Overview", "url": "https://jamanetwork.com/" },
+      { "name": "Outcome Independence (Alan Gordon)", "url": "https://www.tmswiki.org/" },
+      { "name": "Fear-Avoidance Model Overview", "url": "https://www.physio-pedia.com/" }
+    ]
+  },
+  "language_bank": {
+    "safety_reappraisal_short": [
+      "This feels intense, and your attention is strong—that doesn’t mean danger.",
+      "Let’s meet the sensation as information, not an alarm."
+    ],
+    "curiosity_scan_short": [
+      "Let’s gently watch the edges, intensity, and temperature—just noticing shifts.",
+      "See if anything changes with a longer exhale."
+    ],
+    "outcome_independence_nudge": [
+      "We’ll practice for its own sake; relief is welcome, not required.",
+      "You showed up—that’s the success metric today."
+    ],
+    "generic": [
+      "We’ll keep it simple and curious for a minute.",
+      "Let’s notice without pressure to change anything."
+    ]
+  },
+  "exercise_bank": {
+    "generic": [
+      {
+        "id": "breath_60",
+        "title": "60-second longer exhale",
+        "steps": [
+          "Sit comfortably.",
+          "Inhale ~4s.",
+          "Exhale ~6s, a bit longer.",
+          "Repeat 6–8 cycles; just notice changes."
+        ]
+      },
+      {
+        "id": "scan_90",
+        "title": "90-second body scan",
+        "steps": [
+          "Place attention on the most noticeable spot.",
+          "Name qualities (warm, tight, pulsing).",
+          "Watch it change for 90s.",
+          "If it spreads, follow it with curiosity."
+        ]
+      }
+    ],
+    "back": [
+      {
+        "id": "catcow_light",
+        "title": "Gentle spine wave (pain-free range)",
+        "steps": [
+          "Seated or hands/knees.",
+          "Slowly round then lengthen with breath x5.",
+          "Keep it small and comfortable.",
+          "Stop if pain sharpens."
+        ]
+      }
+    ],
+    "neck_shoulders": [
+      {
+        "id": "neck_soften",
+        "title": "Neck soften & shoulder rolls",
+        "steps": [
+          "Roll shoulders back x5 and forward x5.",
+          "Ear toward shoulder 10–15s each side (no forcing).",
+          "Unclench jaw; slow exhale.",
+          "Recheck sensation."
+        ]
+      }
+    ],
+    "head": [
+      {
+        "id": "jaw_breath",
+        "title": "Jaw & temple release",
+        "steps": [
+          "Tongue to palate; let jaw hang.",
+          "Slow exhale 6s; rub temples 20–30s.",
+          "Soften forehead/eyes.",
+          "Notice any change."
+        ]
+      }
+    ],
+    "prt_additions": [
+      {
+        "id": "st_observe_edges_60",
+        "title": "60s somatic tracking: observe the edges",
+        "steps": [
+          "Locate the clearest spot of sensation.",
+          "Describe its edges/texture/temperature (silently or aloud).",
+          "Exhale a touch longer than inhale.",
+          "Notice any shift—bigger, smaller, same—without chasing relief."
+        ]
+      },
+      {
+        "id": "safety_reappraise_45",
+        "title": "45s safety reminder",
+        "steps": [
+          "Tell the body: ‘Uncomfortable, not dangerous.’",
+          "Place a hand on the area or heart.",
+          "Soft gaze or closed eyes for two slow breaths.",
+          "Return to what you were doing, gently."
+        ]
+      }
+    ],
+    "buckets_map": {
+      "safety_reappraisal_short": ["safety_reappraise_45"],
+      "curiosity_scan_short": ["st_observe_edges_60"],
+      "outcome_independence_nudge": ["breath_60", "scan_90"],
+      "generic": ["scan_90", "breath_60"]
+    }
+  },
+  "exercise_selection": {
+    "by_region": {
+      "lower_back|mid_back|upper_back": "back",
+      "neck|shoulder": "neck_shoulders",
+      "head|temple|jaw": "head",
+      "*": "generic"
+    },
+    "by_quality": {
+      "sharp|burning|stabbing": "safety_reappraisal_short",
+      "dull|aching|tight|throbbing": "curiosity_scan_short",
+      "*": "generic"
+    },
+    "by_duration": {
+      "days_since_onset >= 14": "outcome_independence_nudge",
+      "*": "none"
+    }
+  },
+  "rag": {
+    "allowlist_domains": [
+      "painreprocessingtherapy.com",
+      "jamanetwork.com",
+      "thismighthurtfilm.com",
+      "tmswiki.org",
+      "physio-pedia.com"
+    ],
+    "query_templates": {
+      "coach_support": "somatic tracking steps AND safety reappraisal AND positive affect induction site:{domain}",
+      "tone_examples": "phrases for outcome independence OR curiosity language site:{domain}"
+    },
+    "max_snippets": 2,
+    "max_chars_per_snippet": 300,
+    "sanitize": {
+      "strip_efficacy_stats": true,
+      "remove_medication_mentions": true,
+      "disallow_claims_of_cure": true
+    }
+  },
+  "reply_contract": {
+    "format": "markdown",
+    "sections": [
+      {
+        "type": "acknowledgement",
+        "instruction": "1 short sentence reflecting region and user_text."
+      },
+      {
+        "type": "coach",
+        "instruction": "Up to 2 sentences with PRT framing: safety reappraisal + outcome independence, no diagnosis; optionally use language_bank items."
+      },
+      {
+        "type": "exercise",
+        "instruction": "Choose ONE exercise from the selected bucket; up to 4 bullets."
+      },
+      {
+        "type": "disclaimer",
+        "instruction": "End with the safety disclaimer. If any rule triggers, append the matching escalation message."
+      }
+    ],
+    "end_token": "<END>"
+  }
+
+}

@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject onboardingScreen;
     [SerializeField] private GameObject parameterScreen;
     [SerializeField] private GameObject exerciseScreen;
+    [SerializeField] private GameObject streakRecommendationScreen;
 
     [Header("Navigation Buttons")]
     [SerializeField] private GameObject backButton;
@@ -16,7 +17,8 @@ public class UIManager : MonoBehaviour
     {
         OnboardingScreen,
         ParametersScreen,
-        ExerciseScreen
+        ExerciseScreen,
+        StreakRecommendationScreen
     }
 
     [SerializeField] private ScreenType currentScreen;
@@ -30,7 +32,8 @@ public class UIManager : MonoBehaviour
         {
             { ScreenType.OnboardingScreen, onboardingScreen },
             { ScreenType.ParametersScreen, parameterScreen },
-            { ScreenType.ExerciseScreen, exerciseScreen }
+            { ScreenType.ExerciseScreen, exerciseScreen },
+            { ScreenType.StreakRecommendationScreen, streakRecommendationScreen }
         };
     }
 
@@ -63,6 +66,8 @@ public class UIManager : MonoBehaviour
             ShowScreen(ScreenType.OnboardingScreen);
         else if (currentScreen == ScreenType.ExerciseScreen)
             ShowScreen(ScreenType.ParametersScreen);
+        else if (currentScreen == ScreenType.StreakRecommendationScreen)
+            ShowScreen(ScreenType.OnboardingScreen); // Back to home
     }
 
     public void Forward()
@@ -71,6 +76,11 @@ public class UIManager : MonoBehaviour
             ShowScreen(ScreenType.ParametersScreen);
         else if (currentScreen == ScreenType.ParametersScreen)
             ShowScreen(ScreenType.ExerciseScreen);
+    }
+
+    public void BackToHome()
+    {
+        ShowScreen(ScreenType.OnboardingScreen);
     }
 
     private void UpdateNavigationButtons()
@@ -84,7 +94,7 @@ public class UIManager : MonoBehaviour
         if (forwardButton != null)
         {
             // Forward hidden only on last screen
-            forwardButton.SetActive(currentScreen != ScreenType.ExerciseScreen);
+            forwardButton.SetActive(currentScreen != ScreenType.ExerciseScreen && currentScreen != ScreenType.StreakRecommendationScreen);
         }
     }
 }
