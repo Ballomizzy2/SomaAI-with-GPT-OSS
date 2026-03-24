@@ -5,10 +5,10 @@ const unityBuildDir = path.resolve(process.cwd(), "Unity Project", "Soma+", "Bui
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    typedRoutes: true
-  },
-  outputFileTracingIncludes: {
-    "/unity/[[...path]]": [path.join(unityBuildDir, "**/*")]
+    typedRoutes: true,
+    outputFileTracingIncludes: {
+      "/unity/[[...path]]": [path.join(unityBuildDir, "**/*")]
+    }
   },
   async headers() {
     return [
@@ -35,6 +35,7 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
 
 
 

@@ -1,5 +1,4 @@
 import fs from "fs/promises";
-import mime from "mime-types";
 import path from "path";
 import type { NextRequest } from "next/server";
 
@@ -48,8 +47,8 @@ function getMimeType(filePath: string): string {
     return mimeTypes[ext];
   }
 
-  // Fallback to mime-types library
-  return mime.lookup(filePath) || 'application/octet-stream';
+  // Fallback
+  return 'application/octet-stream';
 }
 
 export async function GET(

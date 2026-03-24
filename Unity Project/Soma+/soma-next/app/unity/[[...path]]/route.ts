@@ -1,5 +1,4 @@
 import fs from "fs/promises";
-import mime from "mime-types";
 import path from "path";
 import type { NextRequest } from "next/server";
 
@@ -31,7 +30,7 @@ export async function GET(
 
   try {
     const file = await fs.readFile(targetPath);
-    const contentType = mime.lookup(targetPath) || "application/octet-stream";
+    const contentType = "application/octet-stream";
     const headers = new Headers({ "content-type": contentType });
 
     if (targetPath.endsWith(".br")) {
@@ -44,6 +43,7 @@ export async function GET(
     return new Response("Error loading Unity build", { status: 500 });
   }
 }
+
 
 
 
