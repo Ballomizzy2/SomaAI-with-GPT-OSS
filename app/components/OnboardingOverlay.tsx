@@ -1,29 +1,13 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
-
-const STORAGE_KEY = 'soma_onboarding_completed_v1';
+import { useMemo, useState } from 'react';
 
 type Step = 0 | 1 | 2;
 
 export default function OnboardingOverlay({ onDone }: { onDone: () => void }) {
-  const [isOpen, setIsOpen] = useState(false);
+  /** Always show on each page load / refresh (no localStorage skip). */
+  const [isOpen, setIsOpen] = useState(true);
   const [step, setStep] = useState<Step>(0);
-  const [dontShowAgain, setDontShowAgain] = useState(true);
-
-  useEffect(() => {
-    try {
-      const completed = window.localStorage.getItem(STORAGE_KEY) === '1';
-      if (completed) {
-        setIsOpen(false);
-        onDone();
-        return;
-      }
-      setIsOpen(true);
-    } catch {
-      setIsOpen(true);
-    }
-  }, [onDone]);
 
   const content = useMemo(() => {
     if (step === 0) {
@@ -100,11 +84,6 @@ export default function OnboardingOverlay({ onDone }: { onDone: () => void }) {
             type="button"
             className="onboard-skip"
             onClick={() => {
-              if (dontShowAgain) {
-                try {
-                  window.localStorage.setItem(STORAGE_KEY, '1');
-                } catch {}
-              }
               setIsOpen(false);
               onDone();
             }}
@@ -115,15 +94,6 @@ export default function OnboardingOverlay({ onDone }: { onDone: () => void }) {
 
         <h2 className="onboard-title">{content.title}</h2>
         <div className="onboard-body">{content.body}</div>
-
-        <label className="onboard-checkbox">
-          <input
-            type="checkbox"
-            checked={dontShowAgain}
-            onChange={(e) => setDontShowAgain(e.target.checked)}
-          />
-          Don’t show this again
-        </label>
 
         <div className="onboard-actions">
           <button
@@ -141,11 +111,6 @@ export default function OnboardingOverlay({ onDone }: { onDone: () => void }) {
               if (step < 2) {
                 setStep((s) => ((s + 1) as Step));
                 return;
-              }
-              if (dontShowAgain) {
-                try {
-                  window.localStorage.setItem(STORAGE_KEY, '1');
-                } catch {}
               }
               setIsOpen(false);
               onDone();

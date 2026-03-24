@@ -59,12 +59,21 @@ export async function POST(request: Request) {
   try {
     const { painContext } = await request.json();
 
-    const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
-    const AGENT_ID = process.env.ELEVENLABS_AGENT_ID;
+    const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY?.trim();
+    const AGENT_ID = process.env.ELEVENLABS_AGENT_ID?.trim();
 
     if (!ELEVENLABS_API_KEY || !AGENT_ID) {
+      const missing: string[] = [];
+      if (!ELEVENLABS_API_KEY) missing.push('ELEVENLABS_API_KEY');
+      if (!AGENT_ID) missing.push('ELEVENLABS_AGENT_ID');
+      console.error('[ElevenLabs] Missing env:', missing.join(', '));
       return NextResponse.json(
-        { error: 'ElevenLabs configuration missing' },
+        {
+          error: 'ElevenLabs configuration missing',
+          missingKeys: missing,
+          hint:
+            'Add ELEVENLABS_API_KEY and ELEVENLABS_AGENT_ID to .env or .env.local, then restart the dev server. See .env.example.',
+        },
         { status: 500 }
       );
     }
