@@ -250,7 +250,7 @@ export default function PainCheckInTracker({ embedded, persistent = false }: Pai
               disabled={isSubmitting}
             >
               {QUALITY_OPTIONS.map((q) => (
-                <option key={q} value={q}>
+                <option key={q} value={q} style={{ color: 'black' }}>
                   {q}
                 </option>
               ))}

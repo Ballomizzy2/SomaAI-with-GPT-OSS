@@ -5,6 +5,7 @@ import Script from 'next/script';
 import PainCheckInTracker from './PainCheckInTracker';
 import OnboardingOverlay from './OnboardingOverlay';
 import ProgressDashboard from './ProgressDashboard';
+import BodyMapNavHints from './BodyMapNavHints';
 import UnityWebGLPlayer from './UnityWebGLPlayer';
 import VoiceCoachWidget from './VoiceCoachWidget';
 
@@ -70,6 +71,7 @@ export default function HomeExperience() {
           </div>
           <div className="experience-stage">
             <UnityWebGLPlayer />
+            <BodyMapNavHints />
           </div>
         </section>
 
