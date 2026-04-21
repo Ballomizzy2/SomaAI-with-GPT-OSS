@@ -1,0 +1,29 @@
+code=1
+STDOUT
+
+> soma-next@0.1.0 build
+> next build
+
+  â–² Next.js 14.2.33
+  - Environments: .env
+  - Experiments (use with caution):
+    Â· typedRoutes
+
+   Creating an optimized production build ...
+ âœ“ Compiled successfully
+   Linting and checking validity of types ...
+
+STDERR
+Failed to compile.
+
+./Unity Project/Soma+/soma-next/app/unity/[[...path]]/route.ts:2:18
+Type error: Could not find a declaration file for module 'mime-types'. 'C:/Users/Owner/Documents/Work/Research/node_modules/mime-types/index.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/mime-types` if it exists or add a new declaration (.d.ts) file containing `declare module 'mime-types';`
+
+[0m [90m 1 |[39m [36mimport[39m fs [36mfrom[39m [32m"fs/promises"[39m[33m;[39m[0m
+[0m[31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m mime [36mfrom[39m [32m"mime-types"[39m[33m;[39m[0m
+[0m [90m   |[39m                  [31m[1m^[22m[39m[0m
+[0m [90m 3 |[39m [36mimport[39m path [36mfrom[39m [32m"path"[39m[33m;[39m[0m
+[0m [90m 4 |[39m [36mimport[39m type { [33mNextRequest[39m } [36mfrom[39m [32m"next/server"[39m[33m;[39m[0m
+[0m [90m 5 |[39m[0m
+Next.js build worker exited with code: 1 and signal: null

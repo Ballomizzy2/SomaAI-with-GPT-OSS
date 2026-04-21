@@ -1,0 +1,52 @@
+BRANCH
+feature/unity-voice-bridge
+
+STATUS
+ M .next/cache/.tsbuildinfo
+ M .next/cache/webpack/client-production/0.pack
+ M .next/cache/webpack/client-production/index.pack
+ M .next/cache/webpack/server-production/0.pack
+ M .next/cache/webpack/server-production/1.pack
+ M .next/cache/webpack/server-production/3.pack
+ M .next/cache/webpack/server-production/index.pack
+ M .next/cache/webpack/server-production/index.pack.old
+ M .next/server/app-paths-manifest.json
+ D .next/server/app/unity/[[...path]]/route.js
+ M .next/server/server-reference-manifest.json
+ D .next/server/vendor-chunks/mime-db.js
+ D .next/server/vendor-chunks/mime-types.js
+ M .next/server/vendor-chunks/next.js
+ M .next/server/webpack-runtime.js
+ M .next/trace
+ D .next/types/app/unity/[[...path]]/route.ts
+ M .next/types/link.d.ts
+ M app/unity/[[...path]]/route.ts
+ M next.config.mjs
+?? .next/cache/webpack/client-production/1.pack
+?? .next/cache/webpack/client-production/2.pack
+?? .next/cache/webpack/client-production/3.pack
+?? .next/cache/webpack/client-production/4.pack
+?? .next/cache/webpack/client-production/5.pack
+?? .next/cache/webpack/client-production/6.pack
+?? .next/cache/webpack/client-production/index.pack.old
+?? .next/cache/webpack/server-development/0.pack.gz_
+?? .next/cache/webpack/server-development/2.pack.gz_
+?? .next/cache/webpack/server-development/4.pack.gz_
+?? .next/cache/webpack/server-development/index.pack.gz_
+?? .next/cache/webpack/server-production/5.pack
+?? .next/cache/webpack/server-production/6.pack
+?? .next/cache/webpack/server-production/7.pack
+?? .next/cache/webpack/server-production/8.pack
+?? _git_build_check.py
+?? branch_check.txt
+?? build_check.txt
+?? diag_report.txt
+?? git_diag.txt
+?? git_snapshot.txt
+?? git_state.txt
+?? probe.txt
+
+LOG
+28d7120 Initial
+537cfae feat-unity-voice-bridge-updates
+af6f01a Merge branch 'main' of https://github.com/Ballomizzy2/SomaAI-with-GPT-OSS

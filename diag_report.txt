@@ -1,0 +1,112 @@
+BUILD_EXCEPTION:
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+    r=subprocess.run(['npm','run','build'],capture_output=True,text=True)
+  File "C:\Python313\Lib\subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\subprocess.py", line 1554, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+                             # no special security
+                             ^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+                             cwd,
+                             ^^^^
+                             startupinfo)
+                             ^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+
+BRANCH:
+feature/unity-voice-bridge
+
+
+STATUS:
+ M .next/app-build-manifest.json
+ M .next/build-manifest.json
+ M .next/cache/.tsbuildinfo
+ M .next/cache/webpack/client-production/0.pack
+ M .next/cache/webpack/client-production/index.pack
+ M .next/cache/webpack/server-production/0.pack
+ M .next/cache/webpack/server-production/1.pack
+ M .next/cache/webpack/server-production/3.pack
+ M .next/cache/webpack/server-production/index.pack
+ M .next/cache/webpack/server-production/index.pack.old
+ M .next/server/app-paths-manifest.json
+ M .next/server/app/page.js
+ M .next/server/app/page_client-reference-manifest.js
+ M .next/server/app/unity/[[...path]]/route.js
+ M .next/server/interception-route-rewrite-manifest.js
+ M .next/server/middleware-build-manifest.js
+ M .next/server/middleware-react-loadable-manifest.js
+ M .next/server/next-font-manifest.js
+ M .next/server/server-reference-manifest.js
+ M .next/server/server-reference-manifest.json
+ D .next/server/vendor-chunks/@elevenlabs.js
+ D .next/server/vendor-chunks/@swc.js
+ D .next/server/vendor-chunks/livekit-client.js
+ D .next/server/vendor-chunks/mime-db.js
+ D .next/server/vendor-chunks/mime-types.js
+ D .next/server/vendor-chunks/next.js
+ M .next/server/webpack-runtime.js
+ D .next/static/chunks/app-pages-internals.js
+ D .next/static/chunks/app/layout.js
+ D .next/static/chunks/app/page.js
+ D .next/static/chunks/main-app.js
+ D .next/static/chunks/polyfills.js
+ D .next/static/chunks/webpack.js
+ D .next/static/css/app/layout.css
+ D .next/static/development/_buildManifest.js
+ D .next/static/development/_ssgManifest.js
+ D .next/static/webpack/633457081244afec._.hot-update.json
+ M .next/trace
+ M .next/types/link.d.ts
+?? .next/cache/webpack/client-production/1.pack
+?? .next/cache/webpack/client-production/2.pack
+?? .next/cache/webpack/client-production/index.pack.old
+?? .next/cache/webpack/server-production/5.pack
+?? .next/cache/webpack/server-production/6.pack
+?? .next/routes-manifest.json
+?? .next/server/app/_not-found/
+?? .next/server/app/api/
+?? .next/server/app/page.js.nft.json
+?? .next/server/app/unity/[[...path]]/route.js.nft.json
+?? .next/server/chunks/
+?? .next/server/font-manifest.json
+?? .next/server/pages/
+?? .next/static/9ZIoVjncOYvtMSKgcyjcL/
+?? .next/static/S5xIB4xfOJrrgXNP-eJVc/
+?? .next/static/chunks/117-b2bc009b0211e539.js
+?? .next/static/chunks/144d3bae-d68421e4ae0175f2.js
+?? .next/static/chunks/58-066f6feb9e23e887.js
+?? .next/static/chunks/app/_not-found/
+?? .next/static/chunks/app/layout-95e7e24784c300ba.js
+?? .next/static/chunks/app/page-fdcbdb5e5a99760f.js
+?? .next/static/chunks/fd9d1056-88c8a1669018f964.js
+?? .next/static/chunks/framework-f66176bb897dc684.js
+?? .next/static/chunks/main-83f4ae4d709497e1.js
+?? .next/static/chunks/main-app-49c8fc1e1d290bd3.js
+?? .next/static/chunks/pages/
+?? .next/static/chunks/polyfills-42372ed130431b0a.js
+?? .next/static/chunks/webpack-03f7c6bc932ce1e3.js
+?? .next/static/css/7205dc19a404e8f6.css
+?? .next/types/app/api/
+?? _git_build_check.py
+?? branch_check.txt
+?? git_diag.txt
+?? git_state.txt
+?? probe.txt
+
+
+GIT_ERR:
