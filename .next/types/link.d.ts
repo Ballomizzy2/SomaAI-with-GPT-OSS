@@ -32,8 +32,8 @@ declare namespace __next_route_internal_types__ {
     | `/`
     | `/api/elevenlabs/signed-url`
     | `/api/pain/checkin`
-    | `/api/session/pain`
     | `/api/session/exercise`
+    | `/api/session/pain`
     | `/api/session/unity-event`
   type DynamicRoutes<T extends string = string> = 
     | `/unity/${OptionalCatchAllSlug<T>}`

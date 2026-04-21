@@ -1,5 +1,1 @@
-{
-  "/page": "app/page.js",
-  "/api/elevenlabs/signed-url/route": "app/api/elevenlabs/signed-url/route.js",
-  "/unity/[[...path]]/route": "app/unity/[[...path]]/route.js"
-}
+{}
