@@ -14,13 +14,13 @@ export default function HomeExperience() {
     <main className="experience-shell">
       <header className="experience-topbar">
         <div className="experience-topbar-left">
-          <span className="experience-wordmark">SomaAI</span>
+          <span className="experience-wordmark">Soma<span>AI</span></span>
           <div className="experience-divider" />
-          <span className="experience-session-label">Session workspace</span>
+          <span className="experience-session-label">Pain management session</span>
         </div>
 
         <div className="experience-steps">
-          <div className="experience-step">
+          <div className="experience-step active">
             <div className="experience-step-num active">1</div>
             <span>Select region</span>
           </div>
@@ -39,7 +39,7 @@ export default function HomeExperience() {
         <div className="experience-topbar-right">
           <div className="experience-breath-indicator">
             <div className="experience-breath-dot" />
-            <span>Live session</span>
+            <span>Active</span>
           </div>
           <Link href="/unity/index.html" target="_blank" className="experience-open-link">
             Fullscreen map
